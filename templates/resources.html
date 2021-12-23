@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block head %}
+<style>
+    .buttonset{
+        margin-top:5px;
+        padding:0.5rem;
+    }
+</style>
+{% endblock head %} {% block title %}Resources{% endblock title %}
+{% block body%}
+<h2 class="text-center"> For reminder on discord server kindly submit the form below </h2>
+<div>
+    {% if messages %}
+    <ul class="messages">
+      {% for i in messages %}
+      <li>
+        <div class="alert alert-success">
+          {{i}}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+<form class="form-signin" method="post" action="/discordLink">
+    {% csrf_token %}
+    <div class="mb-3 container-fluid">
+        <label for="exampleFormControlInput1" class="form-label">UserName/ServerName</label>
+        <input type="text" class="form-control" id="user/servername" name="user/servername">
+    </div>
+    <div class="mb-3 container-fluid">
+        <label for="exampleFormControlInput1" class="form-label">Discord Server Invitation Link</label>
+        <input type="text" class="form-control" id="link" name="link">
+        <button class="buttonset btn  btn-primary" type="submit">Submit</button>
+    </div>
+
+</form>
+{% endblock body %}

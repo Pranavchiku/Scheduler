@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Query Search
+{% endblock title %}
+{% block head %}
+<style>
+  .colcheck{
+    padding-left:0px;
+  }
+  .colstart{
+    padding-left:0px;
+
+  }
+  .ev{
+    padding-left:0px;
+
+  }
+</style>
+{% endblock head %}
+{% block body %}
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid" >
+      <span><p style="color:light;font-size:14px; mb-2" id ="presentTime"></p>
+        <script>
+          var x=setInterval(function(){
+            var datetime=new Date().toLocaleString();
+            document.getElementById("presentTime").innerHTML = datetime;
+          },1000);
+        </script>
+      </span>
+    </div>
+  </nav>
+  <div class="container-fluid my-1" >
+    <table class="table border">
+      <thead>
+        <tr class="col-md-5 col-sm-4-px-0">
+          <th scope="col" style="font-size:14px">Start Time</th>
+          <th scope="col" style="font-size:14px">Duration</th>
+          <th scope="col" style="font-size:14px">Time Left</th>
+          <th scope="col" style="font-size:16px">Event</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td scope="row" style="font-size:14px">
+          
+          {% for i in all%}
+          <p class="colstart">
+            {{i.start}}
+          <hr>
+          </p>
+          {% endfor %} 
+          
+   
+          {% comment %} {{response}} {% endcomment %}
+          </td>
+          <td scope="row" style="font-size:14px">
+          
+            {% for i in all%}
+            <p >
+              {{i.dur}}
+            <hr>
+            </p>
+            {% endfor %} 
+            
+     
+            {% comment %} {{response}} {% endcomment %}
+            </td>
+            <td scope="row" style="font-size:14px" >
+              {% for i in all%}
+              <p class="colcheck">
+                {{i.timeleft}}
+              <hr>
+              </p>
+              {% endfor %} 
+      
+              <script type="text/javascript">
+                // Set the date we're counting down to
+                var countDownDate =document.querySelectorAll(".colstart");
+                var x =document.querySelectorAll(".colcheck");
+                for(var i=0;i<x.length;i++){
+                  x[i].value=x[i].textContent;
+                  x[i].innerHTML=x[i].value;
+                }
+                var b=setInterval(function(){
+                  for(var i=0;i<x.length;i++){
+                    var a=x[i].value;
+                    a=a-1;
+                    var days=Math.floor(a/(3600*24));
+                    var hours=Math.floor((a%(3600*24))/(3600));
+                    var minutes=Math.floor((a%3600)/(60));
+                    var seconds=Math.floor((a%60));
+                    x[i].value=a;
+                    x[i].innerHTML=days+"d "+ hours + "h "+ minutes + "m " + seconds + "s ";
+                  }
+                },1000);
+                </script>
+              {% comment %} {{response}} {% endcomment %}
+              </td>
+              <td scope="row" style="font-size:14px">
+          
+                {% for i in all%}
+                <p class="ev">
+                  {{i.event}}
+                <hr>
+                </p>
+                {% endfor %} 
+               <script type="text/javascript">
+                  var e =document.querySelectorAll(".ev");
+                  for(var i=0;i<x.length;i++){
+                    e[i].style.backgroundColor = "yellow";
+                  }
+                </script>
+                
+         
+                {% comment %} {{response}} {% endcomment %}
+                </td>
+        
+        </tr>
+  
+      </tbody>
+  
+    </table>
+  </div>
+{% endblock body %}

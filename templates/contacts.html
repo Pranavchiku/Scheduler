@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+    .buttonset{
+        margin-top:5px;
+        padding:0.5rem;
+    }
+</style>
+{% endblock head %} {% block title %}Contacts{% endblock title %}
+{% block body%}
+<div>
+    {% if messages %}
+    <ul class="messages">
+      {% for i in messages %}
+      <li>
+        <div class="alert alert-success">
+          {{i}}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+<h2 class="text-center">Contact Us</h2>
+
+<form class="form-signin" method="post" action="/handleContact">
+    {% csrf_token %}
+    <div class="mb-3 container-fluid">
+        <label for="exampleFormControlInput1" class="form-label">UserName</label>
+        <input type="text" class="form-control" id="username" name="username">
+    </div>
+    <div class="mb-3 container-fluid">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" name="email">
+    </div>
+    <div class="mb-3 container-fluid">
+        <label for="exampleFormControlInput1" class="form-label">Description</label>
+        <textarea type="text" class="form-control" id="desc" name="desc" rows="3"></textarea>
+        <button class="buttonset btn  btn-primary" type="submit">Submit</button>
+    </div>
+</form>
+{% endblock body %}
