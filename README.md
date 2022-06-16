@@ -21,4 +21,4 @@ It provides you email and discord message as a reminder.
 ## Extension
 Simplified entire application through a chrome extension which shows the contest in upcoming 24 hours.\
 Along with that ideated another chrome extension to randomly pick a question from CodeForces platform on the basis of user's rating and selection of topic.\
-PS: Both extension are pending review which will be confirmed in next 3-4 business days.
+
