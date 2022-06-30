@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/793a46a7-f145-45cc-a3ca-4c47ec86a343/microsoft.web/sites/subscriptions/793a46a7-f145-45cc-a3ca-4c47ec86a343/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/scheduler-new-2022",
+    "appService.deploySubpath": "."
+}
