@@ -13,3 +13,4 @@ livereload
 psycopg2
 django-celery-results
 PyJWT
+django-livereload
