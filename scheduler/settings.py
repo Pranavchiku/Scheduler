@@ -171,3 +171,4 @@ EMAIL_USE_TLS=True
 # EMAIL_MAIL_HTML='mail_body.html'
 # EMAIL_MAIL_PLAIN='mail_body.txt'
 # EMAIL_PAGE_TEMPLATE='confirm_template.html'
+django_heroku.settings(locals())
