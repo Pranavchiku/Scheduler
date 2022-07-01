@@ -12,3 +12,4 @@ gunicorn
 livereload
 psycopg2
 django-celery-results
+PyJWT
