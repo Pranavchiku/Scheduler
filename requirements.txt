@@ -1,10 +1,10 @@
 Django==2.2.7
-django_celery_beat==2.2.1
-django_email_verification==0.1.0
-python-decouple==3.6
-python-dotenv==0.20.0
-requests==2.26.0
-schedule==1.1.0
+django_celery_beat
+django_email_verification
+python-decouple
+python-dotenv
+requests
+schedule
 whitenoise
 dj-database-url
 django-heroku
