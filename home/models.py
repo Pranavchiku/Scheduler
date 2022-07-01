@@ -1,10 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-
-
-
 class BackEnd(models.Model):
     start=models.CharField(max_length=200)
     dur=models.CharField(max_length=200)

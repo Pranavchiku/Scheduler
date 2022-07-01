@@ -11,3 +11,4 @@ django-heroku
 gunicorn
 livereload
 psycopg2
+django-celery-results
